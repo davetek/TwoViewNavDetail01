@@ -10,6 +10,9 @@ import UIKit
 
 class DetailViewController: UIViewController,  UITableViewDataSource {
     
+    @IBOutlet var tableView: UITableView!
+    
+    
     //set by the main view controller to the
     // value of the button tapped to open this view controller's views
     var dataSelected = 0
@@ -22,13 +25,21 @@ class DetailViewController: UIViewController,  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier") else {
+            fatalError()
+        }
         
-        let data = dataSource.data[dataSelected]
+        guard let data = dataSource.data[dataSelected] else {
+            fatalError()
+        }
         
-        let cellData = data![indexPath.row]
+        let cellData = data[indexPath.row]
         
-        cell.textLabel?.text = cellData
+        guard let cellTextLabel = cell.textLabel else {
+            fatalError()
+            }
+        
+        cellTextLabel.text = cellData
         return cell
     }
     
@@ -40,6 +51,8 @@ class DetailViewController: UIViewController,  UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
         
         watermarkLabel.text = labelText
 

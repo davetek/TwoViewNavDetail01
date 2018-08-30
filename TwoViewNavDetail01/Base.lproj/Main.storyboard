@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifer" id="kPv-6s-znx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" id="kPv-6s-znx">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kPv-6s-znx" id="Igo-mu-MFa">
@@ -140,6 +140,7 @@
                         <viewLayoutGuide key="safeArea" id="PTp-ED-TcY"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="CEr-XJ-vIb" id="Z8l-u9-ceC"/>
                         <outlet property="watermarkLabel" destination="2l4-bt-Du6" id="tLE-dA-iyx"/>
                     </connections>
                 </viewController>
